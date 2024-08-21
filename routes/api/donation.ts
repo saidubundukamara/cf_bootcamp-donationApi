@@ -1,13 +1,12 @@
 import express from "express";
-import DonationController from "../../app/controllers/donations";
-const controller = new DonationController();
+import * as controllers from "../../app/controllers/donations";
 const router = express.Router();
 
-router.get('/', controller.getAllDonation);
-router.get('/:id', controller.getDonationById);
-router.post('/', controller.createDonation);
-router.put('/:id', controller.updateDonation);
-router.delete('/:id', controller.deleteDonation);
+router.get('/', controllers.getAllDonation);
+router.get('/:id', controllers.getDonationById);
+router.post('/', controllers.createDonation);
+router.put('/:id', controllers.updateDonation);
+router.delete('/:id', controllers.deleteDonation);
 
 export default router
 
