@@ -1,10 +1,17 @@
 import express from "express";
+import cors from 'cors';
 import * as controller from "../../app/controllers/blinks";
 
 const router = express.Router();
 
-router.get('/:id', controller.getBlink)
+const corsOptions = {
+  origin: '*',
+  methods: 'GET,POST',
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
 
-router.post('/:id', controller.donate)
+router.get('/:id', cors(corsOptions), controller.getBlink)
+
+router.post('/:id', cors(corsOptions), controller.donate)
 
 export default router
