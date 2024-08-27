@@ -54,7 +54,7 @@ export async function getBlink(req, res) {
         res.set(ACTIONS_CORS_HEADERS);
 
 
-        res.status(201).json(payload);
+        res.status(200).json(payload);
 
     } catch (error) {
         console.log(error);
