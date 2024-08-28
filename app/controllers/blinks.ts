@@ -22,7 +22,7 @@ export async function getBlink(req, res) {
         const donation = await service.getDonationById(id);
 
         const payload : ActionGetResponse = {
-            icon: "",
+            icon: "https://arweave.net/QFKBRpChj18jLiwqSSrPvZEpR2Jryrot-gLKmqZJ8CQ",
             label: "Donation",
             title: donation.title,
             description: donation.description,
