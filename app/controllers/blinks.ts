@@ -70,6 +70,7 @@ export async function donate(req, res) {
 
     try {
 
+        console.log('req.body: ', req.body)
         const donation = await service.getDonationById(id);
 
         if(!donation || !donation.address) {
@@ -77,6 +78,7 @@ export async function donate(req, res) {
         }
 
         const body : ActionPostRequest = req.body;
+        
 
         let account: PublicKey;
 
